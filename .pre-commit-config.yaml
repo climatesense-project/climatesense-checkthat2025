@@ -17,9 +17,8 @@ repos:
         args: [--fix, --exit-non-zero-on-fix, --show-fixes]
       - id: ruff-format
 
-  - repo: https://github.com/compilerla/conventional-pre-commit
-    rev: v4.0.0
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v1.17.0
     hooks:
-      - id: conventional-pre-commit
+      - id: commitizen
         stages: [commit-msg]
-        args: []
