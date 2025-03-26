@@ -14,3 +14,4 @@ Challenge GitLab: https://gitlab.com/checkthat_lab/clef2025-checkthat-lab
 * Package management with [Poetry](https://python-poetry.org/) (install poetry, then poetry install) then poetry shell to activate the virtual environment).
 * Semantic versioning using [Semantic Release](https://python-semantic-release.readthedocs.io/en/latest/).
 * Commit messages using [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) (make sure your commit messages are formatted correctly).
+* Use commitzen to create commit messages (install commitizen, then git cz to create a commit message).
