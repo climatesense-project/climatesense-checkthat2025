@@ -1,0 +1,57 @@
+name: Create release on push and update semantic version.
+'on':
+  push:
+    branches:
+      - master
+      - main
+  pull_request:
+    branches:
+      - master
+      - main
+
+jobs:
+  release:
+    outputs:
+      released: ${{ steps.release-status.outputs.released }}
+      tag: ${{ steps.release-status.outputs.tag }}
+      version: ${{ steps.release-status.outputs.version }}
+
+    runs-on: ubuntu-latest
+    permissions: write-all
+
+    steps:
+      - name: Setup Python.
+        uses: actions/setup-python@v5.5.0
+        with:
+          python-version: '3.12'
+      - name: Checkout branch.
+        uses: actions/checkout@v4.2.2
+        with:
+          fetch-depth: 0
+          ref: main
+      - name: Check release status.
+        id: release-status
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          pip install python-semantic-release
+          if semantic-release --noop --strict version
+          then
+            echo "Releasing new version."
+          else
+            echo "Skipping release steps."
+          fi
+
+      - if: steps.release-status.outputs.released == 'true'
+        name: Release to GitHub.
+        id: github-release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          semantic-release version
+          git fetch --tags
+          for file in ./dist/**
+            do gh release upload "${{ steps.release-status.outputs.tag }}" $file
+          done

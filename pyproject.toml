@@ -1,0 +1,97 @@
+[tool.poetry]
+name = "climatesense-checkthat2025-task4"
+version = "0.1.0"
+description = "ClimateSense's code for task 4 of CheckThat! 2025 that aims to identify scientific web discourse and scientific claim sources."
+authors = ["Grégoire Burel <423662+evhart@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/climatesense/climatesense-checkthat2025-task4"
+repository = "https://github.com/climatesense/climatesense-checkthat2025-task4"
+keywords = ["nlp", "scientific discourse", "scientific claims", "checkthat2025"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "Operating System :: OS Independent",
+]
+include = [
+    { path = "README.md", format = "sdist" },
+    { path = "pyproject.toml", format = "sdist" },
+    { path = "LICENSE", format = "sdist" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+numpy = "^2.2.4"
+pandas = "^2.2.3"
+scikit-learn = "^1.6.1"
+datasets = "^3.4.1"
+jupyterlab = "^4.3.6"
+
+usingversion = "^0.1.2"
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.11.2"
+pre-commit = "^4.2.0"
+python-semantic-release = "^9.21.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.semantic_release]
+version_toml = ["pyproject.toml:tool.poetry.version"]
+branch = "master"
+upload_to_PyPI = false
+upload_to_release = true
+build_command = "pip install poetry && poetry build"
+commit_author = "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
+
+[tool.semantic_release.commit_parser_options]
+allowed_tags = [
+    "build",
+    "chore",
+    "ci",
+    "docs",
+    "feat",
+    "fix",
+    "perf",
+    "style",
+    "refactor",
+    "test",
+]
+minor_tags = ["feat"]
+patch_tags = ["fix", "perf"]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "B",  # flake8-bugbear
+    "C4", # flake8-comprehensions
+    "N",  # PEP8 naming convetions
+    "D",  # pydocstyle
+]
+ignore = [
+    "C901", # too complex
+    "W191", # indentation contains tabs
+    "D401", # imperative mood
+    "D107", # TODO remove docstring warning.
+    "D104", # TODO remove docstring warning.
+    "D103", # TODO remove docstring warning.
+    "D102", # TODO remove docstring warning.
+    "D101", # TODO remove docstring warning.
+    "D100", # TODO remove docstring warning.
+    "D105", # TODO remove docstring warning.
+]
+exclude = ["data/raw/*"]
