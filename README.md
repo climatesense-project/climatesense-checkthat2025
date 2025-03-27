@@ -22,7 +22,7 @@ Challenge GitLab: https://gitlab.com/checkthat_lab/clef2025-checkthat-lab
 * SciWebClaims: https://github.com/AI-4-Sci/SciWebClaims (can be used for the science content identification task)
 * Data for the second task is extracted from https://github.com/allenai/cord19.
 
-## Approaches
+## 🛠️ Approaches
 
 * Task 4a: Consider SetFit / Look at nvidia/domain-classifier.
 * Task 4b: Uses re-ranker models (see https://huggingface.co/blog/train-reranker).
