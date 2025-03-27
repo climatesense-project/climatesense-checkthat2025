@@ -1,6 +1,20 @@
 # CHANGELOG
 
 
+## v0.2.0 (2025-03-27)
+
+### Continuous Integration
+
+- Use commitzen for managing commits
+  ([`7c3d09e`](https://github.com/climatesense-project/climatesense-checkthat2025-task4/commit/7c3d09e2930a21c8c8dd7f45a50dc987c35678fa))
+
+### Features
+
+- Utils functions and task4a dataset preparation including two additional relevant datasets that can
+  be used for training
+  ([`694b1d3`](https://github.com/climatesense-project/climatesense-checkthat2025-task4/commit/694b1d332ba45f5446582eed193dcc5556c2fab9))
+
+
 ## v0.1.1 (2025-03-26)
 
 ### Bug Fixes
