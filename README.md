@@ -15,3 +15,14 @@ Challenge GitLab: https://gitlab.com/checkthat_lab/clef2025-checkthat-lab
 * Semantic versioning using [Semantic Release](https://python-semantic-release.readthedocs.io/en/latest/).
 * Commit messages using [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) (make sure your commit messages are formatted correctly).
 * Use commitzen to create commit messages (install commitizen, then git cz to create a commit message).
+
+## 📦 Resources
+
+* SciTweets: https://github.com/AI-4-Sci/SciTweets/tree/main
+* SciWebClaims: https://github.com/AI-4-Sci/SciWebClaims (can be used for the science content identification task)
+* Data for the second task is extracted from https://github.com/allenai/cord19.
+
+## Approaches
+
+* Task 4a: Consider SetFit / Look at nvidia/domain-classifier.
+* Task 4b: Uses re-ranker models (see https://huggingface.co/blog/train-reranker).
