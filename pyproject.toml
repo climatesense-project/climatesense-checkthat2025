@@ -24,8 +24,8 @@ include = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.12"
-numpy = "^2.2.4"
+python = ">=3.12,<3.13"
+numpy = "1.26"
 pandas = "^2.2.3"
 scikit-learn = "^1.6.1"
 datasets = "^3.4.1"
@@ -37,6 +37,7 @@ plotnine = "^0.14.5"
 networkx = "^3.4.2"
 sentence-transformers = "^4.0.1"
 torch = "<=2.2"
+platformdirs = "^4.3.7"
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.11.2"
 pre-commit = "^4.2.0"
