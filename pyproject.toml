@@ -35,7 +35,10 @@ usingversion = "^0.1.2"
 ipywidgets = "^8.1.5"
 plotnine = "^0.14.5"
 networkx = "^3.4.2"
-sentence-transformers = "^4.0.1"
+sentence-transformers = { version = "^4.0.1", extras = ["train"] }
+setfit = "^1.1.1"
+iterative-stratification = "^0.1.9"
+transformers = "4.50.2"
 torch = "<=2.2"
 platformdirs = "^4.3.7"
 [tool.poetry.group.dev.dependencies]

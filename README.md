@@ -26,3 +26,7 @@ Challenge GitLab: https://gitlab.com/checkthat_lab/clef2025-checkthat-lab
 
 * Task 4a: Consider SetFit / Look at nvidia/domain-classifier.
 * Task 4b: Uses re-ranker models (see https://huggingface.co/blog/train-reranker).
+
+## Warnings
+
+SetFit does not support sentence-transformers v4 whereas reranker trainning has been introduced in sentence-transformers v4.
