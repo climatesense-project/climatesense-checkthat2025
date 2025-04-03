@@ -1,6 +1,27 @@
 # CHANGELOG
 
 
+## v0.3.0 (2025-04-02)
+
+### Build System
+
+- Changed numpy version to 1 and restricting python versions
+  ([`44ff4ac`](https://github.com/climatesense-project/climatesense-checkthat2025-task4/commit/44ff4acae0b4173f3b4a7343a0ca4c0375cc3db6))
+
+- Forcing torch to be <=2.2
+  ([`3e7ed37`](https://github.com/climatesense-project/climatesense-checkthat2025-task4/commit/3e7ed3763d7bf52be0a64bf01fbf794678f1ae23))
+
+### Documentation
+
+- **README.md**: Add emoji to the README file
+  ([`1fa11e4`](https://github.com/climatesense-project/climatesense-checkthat2025-task4/commit/1fa11e4f6956416fabeca638e7653da02cf6f0ee))
+
+### Features
+
+- Added task 4a baseline and SetFit classifier
+  ([`a975680`](https://github.com/climatesense-project/climatesense-checkthat2025-task4/commit/a975680505180e4c56756e687b37adfc44445101))
+
+
 ## v0.2.0 (2025-03-27)
 
 ### Continuous Integration
