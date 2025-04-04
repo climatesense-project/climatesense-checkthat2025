@@ -1,9 +1,20 @@
 # CHANGELOG
 
 
+## v0.4.0 (2025-04-04)
+
+### Features
+
+- Update task 4b raw data
+  ([`0b3a5a5`](https://github.com/climatesense-project/climatesense-checkthat2025-task4/commit/0b3a5a54cec16d7976025db3b4793b9f5d8ee435))
+
+
 ## v0.3.0 (2025-04-02)
 
 ### Build System
+
+- Add poetry.lock to .gitignore -- local builds may be slightly different
+  ([`042c3e9`](https://github.com/climatesense-project/climatesense-checkthat2025-task4/commit/042c3e90b3b7235a63f08d6905fea5d50179d1d0))
 
 - Changed numpy version to 1 and restricting python versions
   ([`44ff4ac`](https://github.com/climatesense-project/climatesense-checkthat2025-task4/commit/44ff4acae0b4173f3b4a7343a0ca4c0375cc3db6))
