@@ -1,9 +1,15 @@
 # CHANGELOG
 
 
+## v0.5.0 (2025-04-04)
+
+
 ## v0.4.0 (2025-04-04)
 
 ### Features
+
+- Cleaning and analysis
+  ([`d17075b`](https://github.com/climatesense-project/climatesense-checkthat2025-task4/commit/d17075bc257a9127d5efac0ea7a06bdbcdeec840))
 
 - Update task 4b raw data
   ([`0b3a5a5`](https://github.com/climatesense-project/climatesense-checkthat2025-task4/commit/0b3a5a54cec16d7976025db3b4793b9f5d8ee435))
