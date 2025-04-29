@@ -1,0 +1,21 @@
+input_type = "train" # "train"
+corpus_type = "titles_abstracts" #"titles" # "titles_abstracts"# "abstracts"
+retriever_name = "BM25" # "BM25"
+K = 10
+
+
+## possible values:
+_input_type = ["dev", "train"]
+_corpus_type = ["titles", "titles_abstracts", "abstracts"]
+_retriever_name = [
+    "BM25",
+    "gtr-t5-large",
+    "gtr-t5-base",
+    "gtr-t5-xl",
+    "gtr-t5-xxl",
+    "gooaq",
+    "bge-large-en",
+    "instructor-xl",
+    "promptretriever",
+    "conan-embedding-v2"
+]
