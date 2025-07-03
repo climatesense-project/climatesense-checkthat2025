@@ -1,0 +1,34 @@
+tasks:
+- source: notebooks/task4a/6__heuristics.ipynb
+  name: task4a-heuristics-[[model_name]]
+  static_analysis: disable
+  product:
+    nb: data/results/heuristics/task4a-heuristics-[[model_name]].html
+  grid:
+  - model_name: [ "mxbai-embed-large" ]
+    embedding_model: "mxbai-embed-large"
+  - model_name: [ "nomic-embed-text" ]
+    embedding_model: "nomic-embed-text"
+  - model_name: [ "bge-m3" ]
+    embedding_model: "bge-m3"
+  - model_name: [ "all-minilm-33m" ]
+    embedding_model: "all-minilm:33m"
+  # - model_name: [ "granite-embedding-278m" ]
+  #   embedding_model: "granite-embedding:278m"
+
+- source: notebooks/task4a/5__embeddings.ipynb
+  name: task4a-embeddings-[[model_name]]
+  static_analysis: disable
+  product:
+    nb: data/results/embeddings/task4a-embeddings-[[model_name]].html
+  grid:
+  - model_name: [ "mxbai-embed-large" ]
+    embedding_model: "mxbai-embed-large"
+  - model_name: [ "nomic-embed-text" ]
+    embedding_model: "nomic-embed-text"
+  - model_name: [ "bge-m3" ]
+    embedding_model: "bge-m3"
+  - model_name: [ "all-minilm-33m" ]
+    embedding_model: "all-minilm:33m"
+  - model_name: [ "granite-embedding-278m" ]
+    embedding_model: "granite-embedding:278m"

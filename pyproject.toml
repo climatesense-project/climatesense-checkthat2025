@@ -1,12 +1,12 @@
 [tool.poetry]
-name = "climatesense-checkthat2025-task4"
+name = "climatesense-checkthat2025"
 version = "0.5.0"
-description = "ClimateSense's code for task 4 of CheckThat! 2025 that aims to identify scientific web discourse and scientific claim sources."
+description = "ClimateSense's code for task 1 and 4 of CheckThat! 2025 that aims to identify scientific web discourse and scientific claim sources."
 authors = ["Grégoire Burel <423662+evhart@users.noreply.github.com>"]
 license = "MIT"
 readme = "README.md"
-homepage = "https://github.com/climatesense/climatesense-checkthat2025-task4"
-repository = "https://github.com/climatesense/climatesense-checkthat2025-task4"
+homepage = "https://github.com/climatesense/climatesense-checkthat2025"
+repository = "https://github.com/climatesense/climatesense-checkthat2025"
 keywords = ["nlp", "scientific discourse", "scientific claims", "checkthat2025"]
 classifiers = [
     "Development Status :: 3 - Alpha",
@@ -41,6 +41,13 @@ iterative-stratification = "^0.1.9"
 transformers = "4.50.2"
 torch = "<=2.2"
 platformdirs = "^4.3.7"
+ollama = "^0.4.8"
+tldextract = "^5.3.0"
+nltk = "^3.9.1"
+spacy = "^3.8.5"
+en-core-web-sm = { url = "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl" }
+ploomber = "^0.23.3"
+rank-bm25 = "^0.2.2"
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.11.2"
 pre-commit = "^4.2.0"

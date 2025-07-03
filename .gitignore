@@ -187,3 +187,7 @@ pyrightconfig.json
 
 # End of https://www.toptal.com/developers/gitignore/api/jupyternotebooks,python
 /notebooks/task4a/trainer_output
+/notebooks/task4a/old
+/data/results
+
+sync_config.jsonc

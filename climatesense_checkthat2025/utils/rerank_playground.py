@@ -3,7 +3,6 @@ import traceback
 
 import torch
 from datasets import load_dataset
-
 from sentence_transformers import SentenceTransformer
 from sentence_transformers.cross_encoder import (
     CrossEncoder,
@@ -15,13 +14,15 @@ from sentence_transformers.cross_encoder.evaluation import (
     CrossEncoderNanoBEIREvaluator,
     CrossEncoderRerankingEvaluator,
 )
-from sentence_transformers.cross_encoder.losses.BinaryCrossEntropyLoss import BinaryCrossEntropyLoss
-from sentence_transformers.evaluation.SequentialEvaluator import SequentialEvaluator
+from sentence_transformers.cross_encoder.losses.BinaryCrossEntropyLoss import (
+    BinaryCrossEntropyLoss,
+)
 from sentence_transformers.util import mine_hard_negatives
 
 # Set the log level to INFO to get more information
 logging.basicConfig(format="%(asctime)s - %(message)s", datefmt="%Y-%m-%d %H:%M:%S", level=logging.INFO)
 print("#A ------ ")
+
 
 def main():
     print("#B ------ ")
@@ -46,7 +47,7 @@ def main():
     print("Model max length:", model.max_length)
     print("Model num labels:", model.num_labels)
     print("#1a done ------ ")
-    
+
     # 2a. Load the GooAQ dataset: https://huggingface.co/datasets/sentence-transformers/gooaq
     print("#2a start ------ ")
     logging.info("Read the gooaq training dataset")
@@ -70,8 +71,8 @@ def main():
         range_max=100,  # Consider only the x most similar samples
         sampling_strategy="top",  # Sample the top negatives from the range
         batch_size=4096,  # Use a batch size of 4096 for the embedding model
-        output_format="labeled-pair",  # The output format is (query, passage, label), as required by BinaryCrossEntropyLoss
-        use_faiss=False, # ED: changed to False
+        output_format="labeled-pair",  # The output format is (query, passage, label), as required by BinaryCrossEntropyLoss  # noqa: E501
+        use_faiss=False,  # ED: changed to False
     )
     logging.info(hard_train_dataset)
     print("#2b done ------ ")
@@ -86,10 +87,10 @@ def main():
     print("#3 start ------ ")
     loss = BinaryCrossEntropyLoss(model=model, pos_weight=torch.tensor(num_hard_negatives))
     print("#3 done ------ ")
-    
-    # 4a. Define evaluators. We use the CrossEncoderNanoBEIREvaluator, which is a light-weight evaluator for English reranking
+
+    # 4a. Define evaluators. We use the CrossEncoderNanoBEIREvaluator, which is a light-weight evaluator for English reranking  # noqa: E501
     print("#4a start ------ ")
-    nano_beir_evaluator = CrossEncoderNanoBEIREvaluator(
+    CrossEncoderNanoBEIREvaluator(
         dataset_names=["msmarco", "nfcorpus", "nq"],
         batch_size=train_batch_size,
     )
@@ -107,7 +108,7 @@ def main():
         batch_size=4096,
         include_positives=True,
         output_format="n-tuple",
-        use_faiss=False, # ED: changed to False (# Using FAISS is recommended to keep memory usage low (pip install faiss-gpu or pip install faiss-cpu)
+        use_faiss=False,  # ED: changed to False (# Using FAISS is recommended to keep memory usage low (pip install faiss-gpu or pip install faiss-cpu)  # noqa: E501
     )
     logging.info(hard_eval_dataset)
     reranking_evaluator = CrossEncoderRerankingEvaluator(
@@ -127,7 +128,7 @@ def main():
 
     # 4c. Combine the evaluators & run the base model on them
     print("#4c start ------ ")
-    evaluator = reranking_evaluator #SequentialEvaluator([reranking_evaluator, nano_beir_evaluator])
+    evaluator = reranking_evaluator  # SequentialEvaluator([reranking_evaluator, nano_beir_evaluator])
     evaluator(model)
     print("#4c done ------ ")
 
@@ -192,11 +193,12 @@ def main():
         model.push_to_hub(run_name)
     except Exception:
         logging.error(
-            f"Error uploading model to the Hugging Face Hub:\n{traceback.format_exc()}To upload it manually, you can run "
-            f"`huggingface-cli login`, followed by loading the model using `model = CrossEncoder({final_output_dir!r})` "
+            f"Error uploading model to the Hugging Face Hub:\n{traceback.format_exc()}To upload it manually, you can run "  # noqa: E501
+            f"`huggingface-cli login`, followed by loading the model using `model = CrossEncoder({final_output_dir!r})` "  # noqa: E501
             f"and saving it using `model.push_to_hub('{run_name}')`."
         )
     print("#9 done ------ ")
+
 
 if __name__ == "__main__":
     main()

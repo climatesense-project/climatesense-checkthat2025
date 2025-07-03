@@ -1,3 +1,4 @@
+import re
 from typing import Dict, List
 
 import numpy as np
@@ -26,7 +27,11 @@ def plot_variable_distribution(df, column_name, title, xlabel, ylabel) -> ggplot
     plot = (
         ggplot(value_counts, aes(x=column_name, y="count", fill=column_name))
         + geom_bar(stat="identity", show_legend=False)
-        + geom_text(aes(label=value_counts["percentage"].apply(lambda x: f"{x:.1f}%")), va="bottom", size=10)
+        + geom_text(
+            aes(label=value_counts["percentage"].apply(lambda x: f"{x:.1f}%")),
+            va="bottom",
+            size=10,
+        )
         + labs(title=title, x=xlabel, y=ylabel)
         + theme_light()
     )
@@ -94,3 +99,20 @@ def compute_metrics(y_pred, y_test, labels: List[str] = None) -> Dict[str, float
     metrics["macro_f1"] = f1_score(y_test, y_pred, average="macro")
 
     return metrics
+
+
+def extract_urls_from_texts(texts):
+    """Extract a list of URLs from a list of text strings.
+
+    Args:
+        texts (List[str]): A list of text strings.
+
+    Returns:
+        List[List[str]]: A list where each element is a list of URLs extracted from the corresponding text.
+    """
+    url_pattern = re.compile(r"https?://(?:www\.)?[a-zA-Z0-9./?=_-]+")
+    extracted_urls = []
+    for text in texts:
+        urls = url_pattern.findall(text)
+        extracted_urls.append(urls)
+    return extracted_urls
