@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "climatesense-checkthat2025"
-version = "1.0.0"
+version = "1.1.0"
 description = "ClimateSense's code for task 1 and 4 of CheckThat! 2025 that aims to identify scientific web discourse and scientific claim sources."
 authors = ["Grégoire Burel <423662+evhart@users.noreply.github.com>"]
 license = "MIT"
