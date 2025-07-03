@@ -1,4 +1,4 @@
-# 🪸 ClimateSense CheckThat! 2025 - Task 4a Challenge
+# 🪸 ClimateSense CheckThat! 2025
 
 Task 4 consists of two subtasks:
 
@@ -25,8 +25,4 @@ Challenge GitLab: https://gitlab.com/checkthat_lab/clef2025-checkthat-lab
 ## 🛠️ Approaches
 
 * Task 4a: Consider SetFit / Look at nvidia/domain-classifier.
-* Task 4b: Uses re-ranker models (see https://huggingface.co/blog/train-reranker).
-
-## Warnings
-
-SetFit does not support sentence-transformers v4 whereas reranker trainning has been introduced in sentence-transformers v4.
+* Task 4b: Consider using re-ranker models (see https://huggingface.co/blog/train-reranker).
