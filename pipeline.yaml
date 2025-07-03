@@ -1,34 +1,78 @@
 tasks:
-- source: notebooks/task4a/6__heuristics.ipynb
-  name: task4a-heuristics-[[model_name]]
-  static_analysis: disable
-  product:
-    nb: data/results/heuristics/task4a-heuristics-[[model_name]].html
-  grid:
-  - model_name: [ "mxbai-embed-large" ]
-    embedding_model: "mxbai-embed-large"
-  - model_name: [ "nomic-embed-text" ]
-    embedding_model: "nomic-embed-text"
-  - model_name: [ "bge-m3" ]
-    embedding_model: "bge-m3"
-  - model_name: [ "all-minilm-33m" ]
-    embedding_model: "all-minilm:33m"
-  # - model_name: [ "granite-embedding-278m" ]
-  #   embedding_model: "granite-embedding:278m"
 
-- source: notebooks/task4a/5__embeddings.ipynb
-  name: task4a-embeddings-[[model_name]]
-  static_analysis: disable
-  product:
-    nb: data/results/embeddings/task4a-embeddings-[[model_name]].html
-  grid:
-  - model_name: [ "mxbai-embed-large" ]
-    embedding_model: "mxbai-embed-large"
-  - model_name: [ "nomic-embed-text" ]
-    embedding_model: "nomic-embed-text"
-  - model_name: [ "bge-m3" ]
-    embedding_model: "bge-m3"
-  - model_name: [ "all-minilm-33m" ]
-    embedding_model: "all-minilm:33m"
-  - model_name: [ "granite-embedding-278m" ]
-    embedding_model: "granite-embedding:278m"
+  - source: notebooks/task4a/2__baseline.ipynb
+    name: task4a-baseline-[[model]]
+    static_analysis: disable
+    product:
+      nb: data/results/baselines/task4a-baselines-[[model]].html
+    grid:
+    - model: [ "twitter-roberta-large-2022-154m" ]
+      model_id: "cardiffnlp/twitter-roberta-large-2022-154m"
+      num_train_epochs: 50
+      per_device_train_batch_size: 42
+      per_device_eval_batch_size: 256
+
+  - source: notebooks/task4a/3__setfit.ipynb
+    name: task4a-setfit-[[model]]
+    static_analysis: disable
+    product:
+      nb: data/results/task4a-setfit-[[model]].html
+    grid:
+    - model: [ bge-base-en-v1.5 ]
+      model_id: "BAAI/bge-base-en-v1.5"
+      num_train_epochs: 10
+      per_device_train_batch_size: 16
+      per_device_eval_batch_size: 256
+
+  - source: notebooks/task4a/3__setfit.ipynb
+    name: task4a-setfit-[[model]]
+    static_analysis: disable
+    product:
+      nb: data/results/setfit/task4a-setfit-[[model]].html
+    grid:
+    - model: [ "twitter-roberta-large-2022-154m" ]
+      model_id: "cardiffnlp/twitter-roberta-large-2022-154m"
+
+  - source: notebooks/task4a/5__embeddings.ipynb
+    name: task4a-embeddings-[[model_name]]
+    static_analysis: disable
+    product:
+      nb: data/results/embeddings/task4a-embeddings-[[model_name]].html
+    grid:
+    - model_name: [ "mxbai-embed-large" ]
+      embedding_model: "mxbai-embed-large"
+    - model_name: [ "nomic-embed-text" ]
+      embedding_model: "nomic-embed-text"
+    - model_name: [ "bge-m3" ]
+      embedding_model: "bge-m3"
+    - model_name: [ "all-minilm-33m" ]
+      embedding_model: "all-minilm:33m"
+    - model_name: [ "granite-embedding-278m" ]
+      embedding_model: "granite-embedding:278m"
+
+  - source: notebooks/task4a/6__heuristics.ipynb
+    name: task4a-heuristics-[[model_name]]
+    static_analysis: disable
+    product:
+      nb: data/results/heuristics/task4a-heuristics-[[model_name]].html
+    grid:
+    - model_name: [ "mxbai-embed-large" ]
+      embedding_model: "mxbai-embed-large"
+    - model_name: [ "nomic-embed-text" ]
+      embedding_model: "nomic-embed-text"
+    - model_name: [ "bge-m3" ]
+      embedding_model: "bge-m3"
+    - model_name: [ "all-minilm-33m" ]
+      embedding_model: "all-minilm:33m"
+
+  - source: notebooks/task4a/8__parallel_setfit.ipynb
+    name: task4a-parallel-setfit-[[model]]-e[[epochs]]-i[[num_iterations]]
+    static_analysis: disable
+    product:
+      nb: data/results/task4a-parallel-setfit-[[model]]-e[[epochs]]-i[[num_iterations]].html
+    grid:
+    - model: [ bge-base-en-v1.5 ]
+      model_id: "BAAI/bge-base-en-v1.5"
+      epochs: [ 1, 5, 10 ]
+      num_iterations: [ 1, 5, 10 ]
+      batch_size: 32
