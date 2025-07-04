@@ -1,0 +1,5 @@
+pandas
+sentence-transformers
+langchain
+langchain-ollama
+hf_xet
