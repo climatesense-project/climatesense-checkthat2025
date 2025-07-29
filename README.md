@@ -1,5 +1,7 @@
 # 🪸 ClimateSense CheckThat! 2025
 
+Task 1 consists in distinguishing whether a sentence from a news article expresses the subjective view of the author behind it or presents an objective view on the covered topic instead.
+
 Task 4 consists of two subtasks:
 
 * **Subtask 4a (Scientific Web Discourse Detection):** Given a social media post (tweet), detect if it contains (1) a scientific claim, (2) a reference to a scientific study / publication, or (3) mentions of scientific entities, e.g. a university or scientist.
@@ -20,9 +22,18 @@ Challenge GitLab: https://gitlab.com/checkthat_lab/clef2025-checkthat-lab
 
 * SciTweets: https://github.com/AI-4-Sci/SciTweets/tree/main
 * SciWebClaims: https://github.com/AI-4-Sci/SciWebClaims (can be used for the science content identification task)
-* Data for the second task is extracted from https://github.com/allenai/cord19.
+* Data for the task 4b is extracted from https://github.com/allenai/cord19.
 
 ## 🛠️ Approaches
 
+* Task 1: E5 + MLP classifier.
 * Task 4a: Consider SetFit / Look at nvidia/domain-classifier.
 * Task 4b: Consider using re-ranker models (see https://huggingface.co/blog/train-reranker).
+
+## Citation
+
+If you use this software, please cite ([bib file](./burel2025clef.bib)):
+
+    Grégoire Burel, Pasquale Lisena, Enrico Daga, Raphael Troncy, Harith Alani. 
+    ClimateSense at CheckThat! 2025: Combining Fine-tuned Large Language Models and Conventional Machine Learning Models for Subjectivity and Scientific Web - Discourse Analysis.
+    In: CLEF 2025 Working Notes, Ceur-WS Sep 2025, Madrid, Spain.

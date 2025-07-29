@@ -1,0 +1,51 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the following paper."
+title: "climatesense-checkthat2025"
+authors:
+  - family-names: Burel
+    given-names: Grégoire
+    orcid: https://orcid.org/0000-0003-0029-5219
+    email: gregoire.burel@open.ac.uk
+    affiliation: The Open University, UK
+  - family-names: Lisena
+    given-names: Pasquale
+    orcid: https://orcid.org/0000-0003-3094-5585
+    email: pasquale.lisena@eurecom.fr
+    affiliation: EURECOM, France
+  - family-names: Daga
+    given-names: Enrico
+    orcid: https://orcid.org/0000-0002-3184-5407
+    email: enrico.daga@open.ac.uk
+    affiliation: The Open University, UK
+  - family-names: Troncy
+    given-names: Raphael
+    orcid: https://orcid.org/0000-0003-0457-1436
+    email: raphael.troncy@eurecom.fr
+    affiliation: EURECOM, France
+  - family-names: Alani
+    given-names: Harith
+    orcid: https://orcid.org/0000-0003-2784-349X
+    email: harith.alani@open.ac.uk
+    affiliation: The Open University, UK
+date-released: 2025-07-29
+url: https://github.com/climatesense-project/climatesense-checkthat2025
+preferred-citation:
+  type: conference-paper
+  authors:
+    - family-names: Burel
+      given-names: Grégoire
+    - family-names: Lisena
+      given-names: Pasquale
+    - family-names: Daga
+      given-names: Enrico
+    - family-names: Troncy
+      given-names: Raphael
+    - family-names: Alani
+      given-names: Harith
+  title: "ClimateSense at CheckThat! 2025: Combining fine-tuned large language models and conventional machine learning models for subjectivity and scientific web discourse analysis"
+  conference: 
+    name: "CLEF 2025 Working Notes"
+  year: 2025
+  month: 9
+  publisher: "CEUR-WS"
+  address: "Madrid, Spain"
